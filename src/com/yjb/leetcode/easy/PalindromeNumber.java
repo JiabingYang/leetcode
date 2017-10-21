@@ -1,4 +1,4 @@
-package com.yjb.leetcode;
+package com.yjb.leetcode.easy;
 
 public class PalindromeNumber {
 
