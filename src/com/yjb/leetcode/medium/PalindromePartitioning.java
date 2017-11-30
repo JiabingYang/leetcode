@@ -4,10 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 深度优先搜索，回溯
+ * 131. Palindrome Partitioning
+ * <p>
+ * Given a string s, partition s such that every substring of the partition is a palindrome.
+ * Return all possible palindrome partitioning of s.
+ * <p>
+ * For example, given s = "aab",
+ * Return
+ * [
+ * ["aa","b"],
+ * ["a","a","b"]
+ * ]
  */
 public class PalindromePartitioning {
 
+    /**
+     * 深度优先搜索，回溯
+     */
     public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();
         if (s == null || s.length() == 0) {

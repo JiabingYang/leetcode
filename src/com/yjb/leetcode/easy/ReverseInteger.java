@@ -3,6 +3,8 @@ package com.yjb.leetcode.easy;
 import java.util.LinkedList;
 
 /**
+ * 7. Reverse Integer
+ *
  * Reverse digits of an integer.
  * <p>
  * Example1: x = 123, return 321
@@ -17,14 +19,14 @@ public class ReverseInteger {
     /**
      * beats 66.7%
      */
-    public int myAnswerNoLinkedList(int x) {
+    public int mySolutionNoLinkedList(int x) {
         int result = 0;
         int num;
         do {
             num = x % 10;
             int newResult = result * 10 + num;
             if (result != (newResult - num) / 10)
-                return 0;
+                return 0; // return 0 when the reversed integer overflows.
             result = newResult;
             x /= 10;
         } while (x != 0);
@@ -34,7 +36,7 @@ public class ReverseInteger {
     /**
      * beats 34.40%
      */
-    public int myAnswerLinkedList(int x) {
+    public int mySolutionLinkedList(int x) {
         if (x == 0) {
             return 0;
         }

@@ -2,6 +2,8 @@ package com.yjb.leetcode.easy;
 
 
 /**
+ * 21. Merge Two Sorted Lists
+ * <p>
  * Merge two sorted linked lists and return it as a new list.
  * The new list should be made by splicing together the nodes of the first two lists.
  */
@@ -10,7 +12,7 @@ public class MergeTwoSortedLists {
     /**
      * beats 48.07%
      */
-    public ListNode myAnswer(ListNode l1, ListNode l2) {
+    public ListNode mySolution(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
         }
@@ -66,8 +68,7 @@ public class MergeTwoSortedLists {
         if (l1.val < l2.val) {
             head = l1;
             head.next = leetCodeUserAnswer(l1.next, l2);
-        }
-        else {
+        } else {
             head = l2;
             head.next = leetCodeUserAnswer(l1, l2.next);
         }

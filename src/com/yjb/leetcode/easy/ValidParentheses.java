@@ -3,6 +3,8 @@ package com.yjb.leetcode.easy;
 import java.util.Stack;
 
 /**
+ * 20. Valid Parentheses
+ * <p>
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
  * <p>
  * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
@@ -12,7 +14,7 @@ public class ValidParentheses {
     /**
      * beats 51.51%
      */
-    public boolean myAnswer(String s) {
+    public boolean mySolution(String s) {
         if (s == null || s.equals(""))
             return false;
         Stack<Character> stack = new Stack<>();

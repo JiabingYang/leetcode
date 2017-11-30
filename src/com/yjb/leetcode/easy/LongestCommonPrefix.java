@@ -1,6 +1,8 @@
 package com.yjb.leetcode.easy;
 
 /**
+ * 14. Longest Common Prefix.
+ * <p>
  * Write a function to find the longest common prefix string amongst an array of strings.
  */
 public class LongestCommonPrefix {
@@ -8,7 +10,7 @@ public class LongestCommonPrefix {
     /**
      * beats 37.64%
      */
-    public String myAnswer(String[] strs) {
+    public String mySolution(String[] strs) {
         if (strs == null || strs.length == 0)
             return "";
         if (strs.length == 1)
