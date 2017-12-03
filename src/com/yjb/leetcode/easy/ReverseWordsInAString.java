@@ -1,7 +1,7 @@
 package com.yjb.leetcode.easy;
 
 /**
- * 186. Reverse Words in a String II
+ * 151. Reverse Words in a String
  * <p>
  * Given an input string, reverse the string word by word. A word is defined as a sequence of non-space characters.
  * <p>
@@ -13,11 +13,11 @@ package com.yjb.leetcode.easy;
  * <p>
  * Could you do it in-place without allocating extra space?
  */
-public class ReverseWordsInAStringII {
+public class ReverseWordsInAString {
 
     public static void main(String[] args) {
         char[] s = "the sky is blue".toCharArray();
-        new ReverseWordsInAStringII().mySolution(s);
+        new ReverseWordsInAString().mySolution(s);
     }
 
     // ---- https://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/ ----
