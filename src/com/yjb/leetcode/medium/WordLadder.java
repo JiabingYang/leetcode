@@ -29,7 +29,7 @@ import java.util.*;
  * UPDATE (2017/1/20):
  * The wordList parameter had been changed to a list of strings (instead of a set of strings). Please
  * reload the code definition to get the latest changes.
- *
+ * <p>
  * 总结：
  * 1. 本题求的是最短路径问题，应该采用bfs而不是dfs
  * 2. 查找邻接点方式的速度：ac+HashSet > isTransformable > ac
@@ -47,7 +47,7 @@ public class WordLadder {
         String beginWord = "hit", endWord = "cog";
         String[] wordArray = {"hot", "dot", "dog", "lot", "log", "cog"};
         List<String> wordList = new ArrayList<>(Arrays.asList(wordArray));
-        System.out.println(new WordLadder().transformableWordNode(beginWord, endWord, wordList));
+        System.out.println(new WordLadder().acSizeHashSet(beginWord, endWord, wordList));
     }
 
     // ------------------------ 依赖的方法和内部类 ------------------------
@@ -77,11 +77,10 @@ public class WordLadder {
 
     // ------------------------ acSizeHashSet ------------------------
     /**
-     * beats 70.86%
+     * beats 78.32%
      */
     public int acSizeHashSet(String beginWord, String endWord, List<String> wordList) {
-        Set<String> set = new HashSet<>(); // 使用HashSet结合ac更快，将一层循环转为散列
-        set.addAll(wordList);
+        Set<String> set = new HashSet<>(wordList); // 使用HashSet结合ac更快，将一层循环转为散列
         int n = 0;
         Queue<String> queue = new LinkedList<>();
         queue.add(beginWord);
@@ -96,13 +95,17 @@ public class WordLadder {
                 char[] vChars = vStr.toCharArray();
                 for (int j = 0; j < vChars.length; j++) {
                     char temp = vChars[j];
-                    for (int k = 0; k < 26; k++) {
-                        char c = (char) ('a' + k);
-                        if (temp == c)
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        if (temp == c) {
                             continue;
+                        }
                         vChars[j] = c;
                         String wStr = new String(vChars);
                         if (set.contains(wStr)) {
+                            // 在这里判断可能稍快些
+//                            if (wStr.equals(endWord)) {
+//                                return n + 1;
+//                            }
                             queue.add(wStr);
                             set.remove(wStr);
                         }
@@ -126,27 +129,26 @@ public class WordLadder {
 
         while (!queue.isEmpty()) {
             WordNode v = queue.remove();
-            String word = v.word;
+            String vStr = v.word;
 
-            char[] arr = word.toCharArray();
-            for (int i = 0; i < arr.length; i++) {
+            char[] vChars = vStr.toCharArray();
+            for (int i = 0; i < vChars.length; i++) {
+                char temp = vChars[i];
                 for (char c = 'a'; c <= 'z'; c++) {
-                    char temp = arr[i];
-                    if (arr[i] != c) {
-                        arr[i] = c;
+                    if (temp == c) {
+                        continue;
                     }
-
-                    String w = new String(arr);
-                    if (set.contains(w)) {
-                        if (w.equals(endWord)) {
+                    vChars[i] = c;
+                    String wStr = new String(vChars);
+                    if (set.contains(wStr)) {
+                        if (wStr.equals(endWord)) {
                             return v.numSteps + 1;
                         }
-                        queue.add(new WordNode(w, v.numSteps + 1));
-                        set.remove(w);
+                        queue.add(new WordNode(wStr, v.numSteps + 1));
+                        set.remove(wStr);
                     }
-
-                    arr[i] = temp;
                 }
+                vChars[i] = temp;
             }
         }
 
