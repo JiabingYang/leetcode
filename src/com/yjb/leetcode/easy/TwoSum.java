@@ -65,9 +65,9 @@ public class TwoSum {
      * Beware that the complement must not be nums[i] itself!
      * <p>
      * Complexity Analysis:
-     * Time complexity : O(n)O(n). We traverse the list containing nn elements exactly twice.
-     * Since the hash table reduces the look up time to O(1)O(1), the time complexity is O(n)O(n).
-     * Space complexity : O(n)O(n). The extra space required depends on the number of items
+     * Time complexity : O(n). We traverse the list containing nn elements exactly twice.
+     * Since the hash table reduces the look up time to O(1)O(1), the time complexity is O(n).
+     * Space complexity : O(n). The extra space required depends on the number of items
      * stored in the hash table, which stores exactly nn elements.
      */
     public int[] twoPassHashTable(int[] nums, int target) {
@@ -93,9 +93,9 @@ public class TwoSum {
      * If it exists, we have found a solution and return immediately.
      * <p>
      * Complexity Analysis:
-     * Time complexity : O(n)O(n). We traverse the list containing nn elements only once.
-     * Each look up in the table costs only O(1)O(1) time.
-     * Space complexity : O(n)O(n). The extra space required depends on the number of items
+     * Time complexity : O(n). We traverse the list containing nn elements only once.
+     * Each look up in the table costs only O(1) time.
+     * Space complexity : O(n). The extra space required depends on the number of items
      * stored in the hash table, which stores at most nn elements.
      */
     public int[] onePassHashTable(int[] nums, int target) {
