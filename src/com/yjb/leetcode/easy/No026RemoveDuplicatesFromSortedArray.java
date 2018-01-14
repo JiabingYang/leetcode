@@ -22,8 +22,8 @@ public class No026RemoveDuplicatesFromSortedArray {
      * beats 61.86%
      */
     public int mySolution(int[] nums) {
-        if (nums.length == 0)
-            return 0;
+        if (nums.length < 2)
+            return nums.length;
         int topIndex = 0; // 0为初始topIndex，num[0]不用设置就为正确的值
         for (int i = 1; i < nums.length; i++) {
             int num = nums[i];
