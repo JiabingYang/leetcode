@@ -202,9 +202,9 @@ public class No30SubstringWithConcatenationOfAllWords {
                     count++;
 
                     while (map.get(str) > wordsMap.get(str)) {
+                        //shift right
                         String left = s.substring(start, start + wordLength);
                         map.put(left, map.get(left) - 1);
-
                         count--;
                         start += wordLength;
                     }

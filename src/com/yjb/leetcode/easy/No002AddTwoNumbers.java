@@ -1,10 +1,19 @@
 package com.yjb.leetcode.easy;
 
+/**
+ * 2. Add Two Numbers
+ * <p>
+ * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+ * <p>
+ * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ * <p>
+ * Example
+ * <p>
+ * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+ * Output: 7 -> 0 -> 8
+ * Explanation: 342 + 465 = 807.
+ */
 public class No002AddTwoNumbers {
-
-    public static void main(String[] args) {
-
-    }
 
     /**
      * 小学数学算法
@@ -54,6 +63,10 @@ public class No002AddTwoNumbers {
      * 小学数学算法
      * carry可以直接存在sum中
      * 使用dummy节点减少头节点判断
+     * <p>
+     * 和https://www.programcreek.com/2012/12/add-two-numbers/上的解法一样
+     * <p>
+     * 52%
      */
     private static ListNode mySolution2(ListNode l1, ListNode l2) {
         if (l1 == null) {
