@@ -1,5 +1,7 @@
 package com.yjb.leetcode.hard;
 
+import java.util.Arrays;
+
 /**
  * 154. Find Minimum in Rotated Sorted Array II
  * <p>
@@ -34,7 +36,7 @@ public class No154FindMinimumInRotatedSortedArrayII {
             int mid = (start + end) / 2;
             if (nums[mid] > nums[end]) { // mid -> 最大值 -> end <=> nums[mid] > nums[end]
                 start = mid + 1;
-            } else if (nums[mid] < nums[end]) { // 最大值 -> mid -> end <=> nums[mid] <= nums[end]
+            } else if (nums[mid] < nums[end]) { // 最大值 -> mid -> end  || 未旋转的数组 <=> nums[mid] <= nums[end]
                 end = mid;
             } else {
                 end--;
