@@ -6,6 +6,18 @@ import java.util.List;
 
 /**
  * 49. Group Anagrams
+ * <p>
+ * Given an array of strings, group anagrams together.
+ * <p>
+ * For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+ * Return:
+ * <p>
+ * [
+ * ["ate", "eat","tea"],
+ * ["nat","tan"],
+ * ["bat"]
+ * ]
+ * Note: All inputs will be in lower-case.
  */
 public class No049GroupAnagrams {
 
