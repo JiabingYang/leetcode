@@ -1,15 +1,18 @@
 package com.yjb.leetcode.easy;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class No290WordPattern {
 
     /**
      * 双向都用map
      * <p>
+     * 其实不需要反向的map，只要加一个HashSet就行
+     * <p>
      * 时间 n
      */
-    private static boolean mySolution(String pattern, String str) {
+    private static boolean mySolution1(String pattern, String str) {
         String[] words = str.split(" ");
 
         if (pattern.length() != words.length) {
@@ -34,6 +37,40 @@ public class No290WordPattern {
             } else {
                 mapA.put(letter, word);
                 mapB.put(word, letter);
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * HashSet替代反向map
+     * <p>
+     * 时间 n
+     */
+    private static boolean mySolution2(String pattern, String str) {
+        String[] words = str.split(" ");
+
+        if (pattern.length() != words.length) {
+            return false;
+        }
+
+        HashMap<Character, String> map = new HashMap<>();
+        HashSet<String> set = new HashSet<>();
+
+        for (int i = 0; i < words.length; i++) {
+            char letter = pattern.charAt(i);
+            String word = words[i];
+
+            if (map.containsKey(letter)) {
+                if (!map.get(letter).equals(word)) {
+                    return false;
+                }
+            } else if (set.contains(word)) {
+                return false;
+            } else {
+                map.put(letter, word);
+                set.add(word);
             }
         }
 
