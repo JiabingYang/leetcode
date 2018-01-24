@@ -122,8 +122,7 @@ public class No127WordLadder {
      * beats 61.76%
      */
     public int acWordNodeHashSet(String beginWord, String endWord, List<String> wordList) {
-        Set<String> set = new HashSet<>();
-        set.addAll(wordList);
+        Set<String> set = new HashSet<>(wordList);
         Queue<WordNode> queue = new LinkedList<>();
         queue.add(new WordNode(beginWord, 1));
 
