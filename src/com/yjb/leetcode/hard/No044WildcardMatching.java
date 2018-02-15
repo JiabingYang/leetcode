@@ -62,7 +62,7 @@ public class No044WildcardMatching {
      * <p>
      * 89.01%
      */
-    public static boolean solution1V1(String s, String p) {
+    private static boolean solution1V1(String s, String p) {
         if (s == null || p == null) {
             return false;
         }
@@ -116,7 +116,7 @@ public class No044WildcardMatching {
      * <p>
      * 85.55%
      */
-    public static boolean solution1V2(String s, String p) {
+    private static boolean solution1V2(String s, String p) {
         if (s == null || p == null) {
             return false;
         }
@@ -197,7 +197,7 @@ public class No044WildcardMatching {
      * (3) 其他
      * match[i][j]=false;
      */
-    public static boolean solution2Dp(String s, String p) {
+    private static boolean solution2Dp(String s, String p) {
         if (s == null || p == null) {
             return false;
         }
