@@ -30,29 +30,29 @@ public class No150EvaluateReversePolishNotation {
         int num1;
         int num2;
         switch (token) {
-        case "+":
-            num1 = stack.pop();
-            num2 = stack.pop();
-            stack.push(num2 + num1);
-            break;
-        case "-":
-            num1 = stack.pop();
-            num2 = stack.pop();
-            stack.push(num2 - num1);
-            break;
-        case "*":
-            num1 = stack.pop();
-            num2 = stack.pop();
-            stack.push(num2 * num1);
-            break;
-        case "/":
-            num1 = stack.pop();
-            num2 = stack.pop();
-            stack.push(num2 / num1);
-            break;
-        default:
-            stack.push(Integer.valueOf(token));
-            break;
+            case "+":
+                num1 = stack.pop();
+                num2 = stack.pop();
+                stack.push(num2 + num1);
+                break;
+            case "-":
+                num1 = stack.pop();
+                num2 = stack.pop();
+                stack.push(num2 - num1);
+                break;
+            case "*":
+                num1 = stack.pop();
+                num2 = stack.pop();
+                stack.push(num2 * num1);
+                break;
+            case "/":
+                num1 = stack.pop();
+                num2 = stack.pop();
+                stack.push(num2 / num1);
+                break;
+            default:
+                stack.push(Integer.valueOf(token));
+                break;
         }
     }
 }
