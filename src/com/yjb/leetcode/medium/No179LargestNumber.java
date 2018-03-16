@@ -41,11 +41,7 @@ public class No179LargestNumber {
             arr[i] = String.valueOf(nums[i]);
         }
 
-        Arrays.sort(arr, new Comparator<String>() {
-            public int compare(String a, String b) {
-                return (b + a).compareTo(a + b);
-            }
-        });
+        Arrays.sort(arr, (a, b) -> (b + a).compareTo(a + b));
 
         StringBuilder sb = new StringBuilder();
         for (String s : arr) {
@@ -53,8 +49,9 @@ public class No179LargestNumber {
         }
 
         // 处理结果的开头是一串0的情况
-        while (sb.charAt(0) == '0' && sb.length() > 1)
+        while (sb.charAt(0) == '0' && sb.length() > 1) {
             sb.deleteCharAt(0);
+        }
 
         return sb.toString();
     }
