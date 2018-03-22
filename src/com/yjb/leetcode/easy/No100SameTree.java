@@ -12,7 +12,8 @@ import java.util.Stack;
  * <p>
  * Example 1:
  * <p>
- * Input:     1         1
+ * Input:
+ * 1         1
  * / \       / \
  * 2   3     2   3
  * <p>
@@ -21,7 +22,8 @@ import java.util.Stack;
  * Output: true
  * Example 2:
  * <p>
- * Input:     1         1
+ * Input:
+ * 1         1
  * /           \
  * 2             2
  * <p>
@@ -30,7 +32,8 @@ import java.util.Stack;
  * Output: false
  * Example 3:
  * <p>
- * Input:     1         1
+ * Input:
+ * 1         1
  * / \       / \
  * 2   1     1   2
  * <p>

@@ -27,7 +27,7 @@ public class No058LengthOfLastWord {
     }
 
     public static int mySolution(String s) {
-        if (s.length() == 0) {
+        if (s == null || s.length() == 0) {
             return 0;
         }
         int right = -1;
@@ -41,6 +41,22 @@ public class No058LengthOfLastWord {
             }
         }
         return right == -1 ? 0 : right + 1;
+    }
+
+    /**
+     * 改进自下面的solution1
+     */
+    public static int mySolution1(String s) {
+        int result = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            char c = s.charAt(i);
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                result++;
+            } else if (result != 0) {
+                return result;
+            }
+        }
+        return result;
     }
 
     /**

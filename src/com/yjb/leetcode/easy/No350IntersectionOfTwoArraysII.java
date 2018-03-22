@@ -98,7 +98,7 @@ public class No350IntersectionOfTwoArraysII {
      * <p>
      * 双指针
      * <p>
-     * 加入数组已排序可以用这种方式！
+     * 假如数组已排序可以用这种方式！
      */
     private static int[] solution2(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
@@ -133,7 +133,7 @@ public class No350IntersectionOfTwoArraysII {
      * <p>
      * 双指针
      * <p>
-     * 加入数组已排序可以用这种方式！
+     * 假如数组已排序可以用这种方式！
      */
     private static int[] solution3(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);

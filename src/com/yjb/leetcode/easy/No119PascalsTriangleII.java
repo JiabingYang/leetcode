@@ -29,7 +29,7 @@ public class No119PascalsTriangleII {
      * https://www.programcreek.com/2014/04/leetcode-pascals-triangle-ii-java/
      */
     private static List<Integer> solution1(int rowIndex) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<Integer>();
         if (rowIndex < 0) {
             return result;
         }

@@ -23,7 +23,6 @@ package com.yjb.leetcode.easy;
  */
 public class No155MinStack {
 
-
     /**
      * Your MinStack object will be instantiated and called as such:
      * MinStack obj = new MinStack();

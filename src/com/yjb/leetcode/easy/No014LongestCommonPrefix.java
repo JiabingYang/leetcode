@@ -20,7 +20,7 @@ public class No014LongestCommonPrefix {
         }
         if (strs.length == 1)
             return strs[0];
-        int minLen = strs.length + 1;
+        int minLen = Integer.MAX_VALUE; // programcreek上写的是strs.length+1（应该是不对的）
         for (String str : strs) {
             if (minLen > str.length()) {
                 minLen = str.length();

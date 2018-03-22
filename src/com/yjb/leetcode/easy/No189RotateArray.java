@@ -23,7 +23,6 @@ public class No189RotateArray {
         new No189RotateArray().bubbleRotate(new int[]{1, 2, 3, 4, 5, 6}, 2);// 561234
     }
 
-
     public void mySolution(int[] nums, int k) {
         int n = nums.length;
         k = k % n; // optional
@@ -114,5 +113,4 @@ public class No189RotateArray {
             right--;
         }
     }
-
 }

@@ -33,10 +33,10 @@ public class No009PalindromeNumber {
     /**
      * https://leetcode.com/articles/palindrome-number/
      * <p>
-     * Time complexity : O(log10n)O(log10n). We divided the input by 10 for every iteration,
-     * so the time complexity is O(log10n)O(log10n)
+     * Time complexity : O(log10n). We divided the input by 10 for every iteration,
+     * so the time complexity is O(log10n)
      * <p>
-     * Space complexity : O(1)O(1).
+     * Space complexity : O(1).
      */
     public boolean revertHalfOfTheNumber(int x) {
         // Special cases:
@@ -80,5 +80,4 @@ public class No009PalindromeNumber {
         }
         return true;
     }
-
 }
