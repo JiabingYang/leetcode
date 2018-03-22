@@ -73,6 +73,27 @@ public class No003LongestSubstringWithoutRepeatingCharacters {
     }
 
     /**
+     * 27.11%
+     * 去掉了mySolutionHashSet中的jStart（简化）
+     */
+    public static int mySolutionHashSet1(String s) {
+        int max = 0;
+        HashSet<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (set.contains(c)) {
+                for (int j = i - set.size(); s.charAt(j) != c; j++) {
+                    set.remove(s.charAt(j));
+                }
+            } else {
+                set.add(c);
+            }
+            max = Math.max(max, set.size());
+        }
+        return max;
+    }
+
+    /**
      * The first solution is like the problem of "determine if a string has all unique characters" in CC 150.
      * We can use a flag array to track the existing characters for the longest substring without repeating characters.
      */
