@@ -23,7 +23,7 @@ import java.util.Arrays;
  * <p>
  * Note: m and n will be at most 100.
  */
-public class No63UniquePathsII {
+public class No063UniquePathsII {
 
     public static void main(String[] args) {
         int[][] obstacleGrid = {{0, 0}, {0, 0}};

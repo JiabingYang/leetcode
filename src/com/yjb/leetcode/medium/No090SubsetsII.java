@@ -23,7 +23,7 @@ import java.util.List;
  * []
  * ]
  */
-public class No90SubsetsII {
+public class No090SubsetsII {
 
     public static void main(String[] args) {
         System.out.println(solution1(new int[]{1, 2, 2}));
