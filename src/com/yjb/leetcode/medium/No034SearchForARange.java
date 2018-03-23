@@ -21,11 +21,12 @@ import java.util.List;
  */
 public class No034SearchForARange {
 
+    /* ---------------- test -------------- */
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution1(new int[]{1}, 0)));
-        System.out.println(Arrays.toString(solution1(new int[]{2, 2}, 3)));
-        System.out.println(Arrays.toString(solution1(new int[]{5, 7, 7, 8, 8, 10}, 8)));
-        System.out.println(Arrays.toString(solution1(new int[]{1, 2, 2}, 2)));
+        System.out.println(Arrays.toString(mySolution3(new int[]{1}, 0)));
+        System.out.println(Arrays.toString(mySolution3(new int[]{2, 2}, 3)));
+        System.out.println(Arrays.toString(mySolution3(new int[]{5, 7, 7, 8, 8, 10}, 8)));
+        System.out.println(Arrays.toString(mySolution3(new int[]{1, 2, 2}, 2)));
         System.out.println("大数据测试");
         int len = 10000000;
         int[] a = new int[len];
@@ -36,9 +37,60 @@ public class No034SearchForARange {
         Arrays.sort(a);
         System.out.println("sorted");
         Timer.printlnNano("solution1", () -> System.out.println(Arrays.toString(solution1(a, 17))));
-        Timer.printlnNano("mySolution2", () -> System.out.println(Arrays.toString(mySolution2(a, 17))));
         Timer.printlnNano("mySolution1", () -> System.out.println(Arrays.toString(mySolution1(a, 17))));
+        Timer.printlnNano("mySolution2", () -> System.out.println(Arrays.toString(mySolution2(a, 17))));
+        Timer.printlnNano("mySolution3", () -> System.out.println(Arrays.toString(mySolution3(a, 17))));
+        // 速度排名：mySolution3, mySolution2, solution1, mySolution1
     }
+
+    /* ---------------- mySolution3 -------------- */
+
+    /**
+     * 61.68%
+     * <p>
+     * 思路参考自：
+     * 剑指offer: No53aNumberOfK
+     * <p>
+     * 应该是四种写法里最好的写法
+     */
+    private static int[] mySolution3(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{-1, -1};
+        }
+        int left = findLeft(nums, target, 0, nums.length - 1);
+        if (left == -1) {
+            return new int[]{-1, -1};
+        }
+        return new int[]{left, findRight(nums, target, left, nums.length - 1)};
+    }
+
+    private static int findLeft(int[] nums, int target, int l, int r) {
+        int temp = r;
+        while (l <= r) {
+            int mid = l + ((r - l) >>> 1);
+            if (nums[mid] < target) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        return (l <= temp && nums[l] == target) ? l : -1;
+    }
+
+    private static int findRight(int[] nums, int target, int l, int r) {
+        int temp = l;
+        while (l <= r) {
+            int mid = l + ((r - l) >>> 1);
+            if (nums[mid] > target) {
+                r = mid - 1;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return (r >= temp && nums[r] == target) ? r : -1;
+    }
+
+    /* ---------------- solution1 -------------- */
 
     /**
      * https://www.programcreek.com/2014/04/leetcode-search-for-a-range-java/
@@ -95,6 +147,8 @@ public class No034SearchForARange {
         }
     }
 
+    /* ---------------- mySolution1 -------------- */
+
     /**
      * 22.78%
      */
@@ -124,6 +178,8 @@ public class No034SearchForARange {
         }
         return new int[]{-1, -1};
     }
+
+    /* ---------------- mySolution2 -------------- */
 
     /**
      * 58.56%
