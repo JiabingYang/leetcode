@@ -26,7 +26,7 @@ public class No161OneEditDistance {
             t = temp;
         }
         int diff = s.length() - t.length();
-        if (diff > 2) {
+        if (diff >= 2) {
             return false;
         }
         if (diff == 1) {

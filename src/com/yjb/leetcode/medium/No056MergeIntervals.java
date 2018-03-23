@@ -42,7 +42,7 @@ public class No056MergeIntervals {
         // 每次从intervals中取出第一个元素，直到intervals为空。
         LinkedList<Interval> result = new LinkedList<>();
         while (!intervals.isEmpty()) {
-            Interval intervalToMerge = intervals.remove(0);
+            Interval intervalToMerge = intervals.removeFirst();
             if (result.isEmpty()) {
                 result.add(intervalToMerge);
                 continue;
